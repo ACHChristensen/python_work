@@ -4,7 +4,7 @@ import file_reader as reader
 def write_list_to_file(output_file, lst):
     with open(output_file, 'w') as f:
         [f.write(word + "\n") for word in lst]
-    reader.print_file_content(output_file) 
+     
 
 if __name__ == '__main__':
     '''Excercise 1.2'''
@@ -13,5 +13,5 @@ if __name__ == '__main__':
     parser.add_argument('input', help='Write what it should say in the file', type=lambda sentence: [str(word) for word in sentence.split(',')])
     args = parser.parse_args()
     write_list_to_file(str(args.file_path), [str(word) for word in args.input])
-
+    reader.print_file_content(str(args.file_path))
 
